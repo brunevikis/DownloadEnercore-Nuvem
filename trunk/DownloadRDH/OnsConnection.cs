@@ -2751,7 +2751,7 @@ $"<p><pre></pre></p>" + $"</body></html>";
                         string MCVPathExtraido = Path.Combine(MCVPath, "Modelos_chuva_Vazao_Extraido");
                         System.IO.Compression.ZipFile.ExtractToDirectory(MCVPath + "\\" + nameFile, MCVPathExtraido);
 
-                        var modelos = new string[] { "SMAP", "CPINS" };
+                        var modelos = new string[] { "SMAP", "CPINS"};
                         var dir = System.IO.Directory.GetDirectories(Path.Combine(MCVPathExtraido, "Modelos_Chuva_Vazao"));
 
                         foreach (var d in dir)
@@ -2765,6 +2765,7 @@ $"<p><pre></pre></p>" + $"</body></html>";
 
                                     SMAPDirectoryCopy(d, Path.Combine(MCVPath, "Modelos_Chuva_Vazao", "SMAP"), true);
                                 }
+                           
                                 else if (name == "CPINS")
                                 {
 
@@ -2802,11 +2803,31 @@ $"<p><pre></pre></p>" + $"</body></html>";
                     {
                         var pathModelo = Path.Combine(MCVPath, "Modelos_Chuva_Vazao");
                         var pathShadow = Path.Combine(MCVPath, "Modelos_Chuva_Vazao_Shadow");
+                        var pathShadowAux = Path.Combine(MCVPath, "Modelos_Chuva_Vazao_ShadowAux");
                         var pathShadowExt = Path.Combine(MCVPath, "Modelos_Chuva_Vazao_shadowExtraido");
-                        string fonte = Path.Combine(pathShadowExt, "Modelos_Chuva_Vazao", "SMAP_SHADOW");
+                        string fonte = Path.Combine(pathShadow, "SMAP_SHADOW");
                         string dest = Path.Combine(pathShadow, "SMAP");
+                        string auxSmap = Path.Combine(pathShadowAux, "SMAP");
+
+                        string MCVPathExtraido = Path.Combine(MCVPath, "Modelos_chuva_Vazao_Extraido");
+                        System.IO.Compression.ZipFile.ExtractToDirectory(MCVPath + "\\" + nameFile, MCVPathExtraido);
+                        var dirSmapShadowExtraido = Path.Combine(MCVPathExtraido, "Modelos_Chuva_Vazao", "SMAP_SHADOW");
+
                         if (Directory.Exists(pathShadow))
                         {
+                            //pegando a smap do shadow pra manter historico
+                            //foreach (string dirPath in Directory.GetDirectories(dest, "*",
+                            //                          SearchOption.AllDirectories))
+                            //{
+                            //    Directory.CreateDirectory(dirPath.Replace(dest, auxSmap));
+                            //}
+
+                            //foreach (string newPath in Directory.GetFiles(dest, ".",
+                            //   SearchOption.AllDirectories))
+                            //{
+                            //    File.Copy(newPath, newPath.Replace(dest, auxSmap), true);
+                            //}
+
                             Directory.Delete(pathShadow, true);
                         }
 
@@ -2871,24 +2892,71 @@ $"<p><pre></pre></p>" + $"</body></html>";
                         //{
                         //    Directory.Delete(pathShadow, true);
                         //}
-                      /*  System.IO.Compression.ZipFile.ExtractToDirectory(MCVPath + "\\" + nameFile, pathShadowExt);
-
-                        foreach (string dirPath in Directory.GetDirectories(fonte, "*",
-                             SearchOption.AllDirectories))
-                            Directory.CreateDirectory(dirPath.Replace(fonte, dest).Replace("Madeira2", "Madeira"));
-
-                        foreach (string newPath in Directory.GetFiles(pathShadowExt, ".", SearchOption.AllDirectories))
+                        //System.IO.Compression.ZipFile.ExtractToDirectory(MCVPath + "\\" + nameFile, pathShadowExt);
+                        if (Directory.Exists(fonte))
                         {
-                            if (newPath.Contains("SMAP_SHADOW"))
+                            foreach (string dirPath in Directory.GetDirectories(fonte, "*",
+                                                       SearchOption.AllDirectories))
+                                Directory.CreateDirectory(dirPath.Replace(fonte, dest));
+
+                            foreach (string newPath in Directory.GetFiles(fonte, ".",
+                               SearchOption.AllDirectories))
                             {
-
-                                File.Copy(newPath, newPath.Replace(fonte, dest).Replace("Madeira2", "Madeira"), true);
+                                File.Copy(newPath, newPath.Replace(fonte, dest), true);
                             }
+                        }
 
-                        }*/
+                          
+
                         if (Directory.Exists(pathShadowExt))
                         {
                             Directory.Delete(pathShadowExt, true);
+                        }
+
+                        if (Directory.Exists(fonte))
+                        {
+                            Directory.Delete(fonte, true);
+                        }
+
+                        if (Directory.Exists(Path.Combine(pathModelo, "SMAP_SHADOW")))
+                        {
+                            Directory.Delete(Path.Combine(pathModelo, "SMAP_SHADOW"), true);
+                        }
+
+                        //if (Directory.Exists(auxSmap))
+                        //{
+                        //    foreach (string dirPath in Directory.GetDirectories(auxSmap, "*",
+                        //                              SearchOption.AllDirectories))
+                        //        Directory.CreateDirectory(dirPath.Replace(auxSmap, dest));
+
+                        //    foreach (string newPath in Directory.GetFiles(auxSmap, ".",
+                        //       SearchOption.AllDirectories))
+                        //    {
+                        //        File.Copy(newPath, newPath.Replace(auxSmap, dest), true);
+                        //    }
+                        //}
+
+                        if (Directory.Exists(dirSmapShadowExtraido))
+                        {
+                            foreach (string dirPath in Directory.GetDirectories(dirSmapShadowExtraido, "*",
+                           SearchOption.AllDirectories))
+                                Directory.CreateDirectory(dirPath.Replace(dirSmapShadowExtraido, dest));
+
+                            foreach (string newPath in Directory.GetFiles(dirSmapShadowExtraido, ".",
+                               SearchOption.AllDirectories))
+                            {
+                                File.Copy(newPath, newPath.Replace(dirSmapShadowExtraido, dest), true);
+                            }
+                        }
+
+                          
+                        if (Directory.Exists(MCVPathExtraido))
+                        {
+                            Directory.Delete(MCVPathExtraido, true);
+                        }
+                        if (Directory.Exists(pathShadowAux))
+                        {
+                            Directory.Delete(pathShadowAux, true);
                         }
 
                     }
@@ -2905,6 +2973,20 @@ $"<p><pre></pre></p>" + $"</body></html>";
             }
             catch (Exception exc)
             {
+                string MCVPathExtraido = Path.Combine(MCVPath, "Modelos_chuva_Vazao_Extraido");
+
+                if (Directory.Exists(MCVPathExtraido))
+                {
+                    Directory.Delete(MCVPathExtraido, true);
+                }
+
+                var pathShadowAux = Path.Combine(MCVPath, "Modelos_Chuva_Vazao_ShadowAux");
+
+
+                if (Directory.Exists(pathShadowAux))
+                {
+                    Directory.Delete(pathShadowAux, true);
+                }
                 textoEmail = @"Houve uma falha de sistema baixar o Modelos_Chuva_Vazao.zip." +
                     "<br>O erro pode ter ocorrido em fazer o donwload, escrever os bytes, deletar a pasta 'Modelos_Chuva_Vazao' ou em extrair o arquivo baixado" +
                     "<br><br> Erro:" + exc.Message;
