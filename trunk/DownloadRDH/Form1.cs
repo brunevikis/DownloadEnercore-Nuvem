@@ -25,8 +25,10 @@ namespace DownloadCompass
         string[] args;
         DateTime Data;
         OnsConnection con = null;
-        string username = "douglas.canducci@cpas.com.br";
-        string password = "Pas5Word";
+       // string username = "douglas.canducci@cpas.com.br";
+        string username = "bruno.araujo@cpas.com.br";
+        //string password = "Pas5Word";
+        string password = "Br@compass";
         string sendMail = "0";
 
         public Form1(string[] args)
