@@ -1567,6 +1567,7 @@ $"<p><pre></pre></p>" + $"</body></html>";
 
             var RV = "RV" + revisao.rev;
             string path = @"C:\Files\Middle - Preço\Acompanhamento de vazões\" + revisao.revDate.ToString("MM_yyyy") + "\\Dados_de_Entrada_e_Saida" + revisao.revDate.ToString("_yyyyMM_") + RV + "\\Previvaz";
+            string pathEntrada = Path.Combine(path, "Arq_Entrada");
             string nomeMes = revisao.revDate.ToString("_yyyyMM_");
 
             string rv = string.Empty;
@@ -1612,6 +1613,45 @@ $"<p><pre></pre></p>" + $"</body></html>";
                         if (!Directory.Exists(Path.Combine(pastaDest, fileSaida.Split('.')[0])))
                             ZipFile.ExtractToDirectory(Path.Combine(pastaDest, fileSaida), path);
                     }
+                    //trata numero de espaços erados no 168_str.DAT
+                    try
+                    {
+                        if (Directory.Exists(pathEntrada))
+                        {
+                            List<string> lines = new List<string>();
+                            var str168 = Directory.GetFiles(pathEntrada).Where(x => Path.GetFileName(x).ToLower().Contains("168_str.dat")).First();
+                            var str168lines = File.ReadAllLines(str168).ToList();
+                            foreach (var l in str168lines)
+                            {
+                                if (l == str168lines[0])
+                                {
+
+                                    int tamanho = l.Length;
+                                    string nl = l;
+                                    if (tamanho >= 33)
+                                    {
+                                        do
+                                        {
+                                            nl = nl.Substring(1);
+                                        } while (nl.Length >= 33);
+                                    }
+
+                                    lines.Add(nl);
+                                }
+                                else
+                                {
+                                    lines.Add(l);
+                                }
+                            }
+                            File.WriteAllLines(str168, lines);
+
+                        }
+                    }
+                    catch (Exception ept)
+                    {
+                        await Tools.SendMail("", "Erro ao tentar baixar o Arquivos Previvaz. <br>Erro: " + ept.Message + ". Entre em contato com o desenvolvedor!", "Erro no Previvaz", "desenv");
+                    }
+
                 }
                 catch { }
                 finally
