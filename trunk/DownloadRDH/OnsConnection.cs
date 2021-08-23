@@ -454,10 +454,10 @@ namespace DownloadCompass
             //   var arqConvert = @"C:\Sistemas\Download Compass\Arquivos Auxiliares\convertegrade.zip"; //Arq_Entrada\Previsao\ECMWF";
             var localPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "convertgrades" + DateTime.Now.ToString("HHmmss"));
 
-            var oneDrive_equip = Path.Combine(@"C:\Compass\MinhaTI\Preço - Documentos\Acompanhamento_de_Precipitacao");
+            var oneDrive_equip = Path.Combine(@"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Acompanhamento_de_Precipitacao");
             if (!Directory.Exists(oneDrive_equip))
             {
-                oneDrive_equip = oneDrive_equip.Replace("Preço - Documentos", "Preço - Documents");
+                oneDrive_equip = oneDrive_equip.Replace("Energy Core Pricing - Documents", "Energy Core Pricing - Documentos");
             }
             var oneDrive_Dados = Path.Combine(oneDrive_equip, "Previsao", Data.ToString("yyyy"), Data.ToString("MM"), Data.ToString("dd"));
 
@@ -679,10 +679,10 @@ namespace DownloadCompass
             var localPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "convertgrades" + DateTime.Now.ToString("HHmmss"));
 
            
-            var oneDrive_equip = Path.Combine(@"C:\Compass\MinhaTI\Preço - Documentos\Acompanhamento_de_Precipitacao");
+            var oneDrive_equip = Path.Combine(@"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Acompanhamento_de_Precipitacao");
             if (!Directory.Exists(oneDrive_equip))
             {
-                oneDrive_equip = oneDrive_equip.Replace("Preço - Documentos", "Preço - Documents");
+                oneDrive_equip = oneDrive_equip.Replace("Energy Core Pricing - Documents", "Energy Core Pricing - Documentos");
             }
             var oneDrive_Dados = Path.Combine(oneDrive_equip, "Previsao", Data.ToString("yyyy"), Data.ToString("MM"), Data.ToString("dd"));
 
@@ -950,10 +950,10 @@ namespace DownloadCompass
             string tempFiles = "C:\\Sistemas\\Download Compass\\Temp Files";
             string GefsPath = Path.Combine("C:\\Files\\Middle - Preço\\Acompanhamento de Precipitação\\Previsao_Numerica", Data.ToString("yyyyMM"), Data.ToString("dd"));
 
-            var oneDrive_equip = Path.Combine(@"C:\Compass\MinhaTI\Preço - Documentos\Acompanhamento_de_Precipitacao");
+            var oneDrive_equip = Path.Combine(@"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Acompanhamento_de_Precipitacao");
             if (!Directory.Exists(oneDrive_equip))
             {
-                oneDrive_equip = oneDrive_equip.Replace("Preço - Documentos", "Preço - Documents");
+                oneDrive_equip = oneDrive_equip.Replace("Energy Core Pricing - Documents", "Energy Core Pricing - Documentos");
             }
             var oneDrive_Dados = Path.Combine(oneDrive_equip, "Previsao", Data.ToString("yyyy"), Data.ToString("MM"), Data.ToString("dd"));
 
@@ -1025,21 +1025,21 @@ namespace DownloadCompass
             string nameFile = ("oshad_{0}_d.gif");
             string direPath = "C:\\Files\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
 
-            var oneDrive_equip = Path.Combine(@"C:\Compass\MinhaTI\Preço - Documentos\Acompanhamento_de_Precipitacao");
+            var oneDrive_equip = Path.Combine(@"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Acompanhamento_de_Precipitacao");
             if (!Directory.Exists(oneDrive_equip))
             {
-                oneDrive_equip = oneDrive_equip.Replace("Preço - Documentos", "Preço - Documents");
+                oneDrive_equip = oneDrive_equip.Replace("Energy Core Pricing - Documents", "Energy Core Pricing - Documentos");
             }
             var oneDrive_Gif = Path.Combine(oneDrive_equip, "Mapas", Data.ToString("yyyy"), Data.ToString("MM"), Data.ToString("dd"));
 
 
-            var oneDrive = @"C:\Compass\OneDrive - MinhaTI\Compass\Trading";
+            var oneDrive = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading";
 
-            string direDrivePath = "C:\\Compass\\MinhaTI\\Alex Freires Marques - Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+            string direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
 
             if (Directory.Exists(oneDrive))
             {
-                direDrivePath = "C:\\Compass\\OneDrive - MinhaTI\\Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+                direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
             }
 
             //string address50 = addressDownload + nameFile;
@@ -1153,21 +1153,21 @@ namespace DownloadCompass
             string nameFile = string.Empty;
             string direPath = "C:\\Files\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
 
-            var oneDrive_equip = Path.Combine(@"C:\Compass\MinhaTI\Preço - Documentos\Acompanhamento_de_Precipitacao");
+            var oneDrive_equip = Path.Combine(@"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Acompanhamento_de_Precipitacao");
             if (!Directory.Exists(oneDrive_equip))
             {
-                oneDrive_equip = oneDrive_equip.Replace("Preço - Documentos", "Preço - Documents");
+                oneDrive_equip = oneDrive_equip.Replace("Energy Core Pricing - Documents", "Energy Core Pricing - Documentos");
             }
             var oneDrive_Gif = Path.Combine(oneDrive_equip, "Mapas", Data.ToString("yyyy"), Data.ToString("MM"), Data.ToString("dd"));
 
 
-            var oneDrive = @"C:\Compass\OneDrive - MinhaTI\Compass\Trading";
+            var oneDrive = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading";
 
-            string direDrivePath = "C:\\Compass\\MinhaTI\\Alex Freires Marques - Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+            string direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
 
             if (Directory.Exists(oneDrive))
             {
-                direDrivePath = "C:\\Compass\\OneDrive - MinhaTI\\Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+                direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
             }
 
             //1 2 3 4 5 6 11 12 13 14 25 26
@@ -1323,22 +1323,22 @@ namespace DownloadCompass
 
             string nameFile = string.Empty;
             string direPath = "C:\\Files\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
-            var oneDrive_equip = Path.Combine(@"C:\Compass\MinhaTI\Preço - Documentos\Acompanhamento_de_Precipitacao");
+            var oneDrive_equip = Path.Combine(@"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Acompanhamento_de_Precipitacao");
             if (!Directory.Exists(oneDrive_equip))
             {
-                oneDrive_equip = oneDrive_equip.Replace("Preço - Documentos", "Preço - Documents");
+                oneDrive_equip = oneDrive_equip.Replace("Energy Core Pricing - Documents", "Energy Core Pricing - Documentos");
             }
             var oneDrive_Gif = Path.Combine(oneDrive_equip, "Mapas", Data.ToString("yyyy"), Data.ToString("MM"), Data.ToString("dd"));
 
 
 
-            var oneDrive = @"C:\Compass\OneDrive - MinhaTI\Compass\Trading";
+            var oneDrive = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading";
 
-            string direDrivePath = "C:\\Compass\\MinhaTI\\Alex Freires Marques - Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+            string direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
 
             if (Directory.Exists(oneDrive))
             {
-                direDrivePath = "C:\\Compass\\OneDrive - MinhaTI\\Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+                direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
             }
 
             //1 2 3 4 5 6 11 12 13 14 25 26
@@ -1763,24 +1763,24 @@ $"<p><pre></pre></p>" + $"</body></html>";
                 //C:\Compass\MinhaTI\Alex Freires Marques - Compass\Trading
 
 
-                var oneDrive_equip = Path.Combine(@"C:\Compass\MinhaTI\Preço - Documentos\Acompanhamento_de_Precipitacao");
+                var oneDrive_equip = Path.Combine(@"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Acompanhamento_de_Precipitacao");
                 if (!Directory.Exists(oneDrive_equip))
                 {
-                    oneDrive_equip = oneDrive_equip.Replace("Preço - Documentos", "Preço - Documents");
+                    oneDrive_equip = oneDrive_equip.Replace("Energy Core Pricing - Documents", "Energy Core Pricing - Documentos");
                 }
                 var oneDrive_Gif = Path.Combine(oneDrive_equip, "Mapas", Data.ToString("yyyy"), Data.ToString("MM"), Data.ToString("dd"));
 
 
-                var oneDrive = @"C:\Compass\OneDrive - MinhaTI\Compass\Trading";
-                var onedriveSpider = "C:\\Compass\\MinhaTI\\Alex Freires Marques - Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman";
+                var oneDrive = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading";
+                var onedriveSpider = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman";
 
 
-                string direDrivePath = "C:\\Compass\\MinhaTI\\Alex Freires Marques - Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+                string direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
 
                 if (Directory.Exists(oneDrive))
                 {
-                    onedriveSpider = "C:\\Compass\\OneDrive - MinhaTI\\Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman";
-                    direDrivePath = "C:\\Compass\\OneDrive - MinhaTI\\Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+                    onedriveSpider = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman";
+                    direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
                 }
 
                 string direPath = "C:\\Files\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
@@ -2555,22 +2555,22 @@ $"<p><pre></pre></p>" + $"</body></html>";
             string direPath = "C:\\Files\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
 
 
-            var oneDrive_equip = Path.Combine(@"C:\Compass\MinhaTI\Preço - Documentos\Acompanhamento_de_Precipitacao");
+            var oneDrive_equip = Path.Combine(@"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Acompanhamento_de_Precipitacao");
             if (!Directory.Exists(oneDrive_equip))
             {
-                oneDrive_equip = oneDrive_equip.Replace("Preço - Documentos", "Preço - Documents");
+                oneDrive_equip = oneDrive_equip.Replace("Energy Core Pricing - Documents", "Energy Core Pricing - Documentos");
             }
             var oneDrive_Gif = Path.Combine(oneDrive_equip, "Mapas", Data.ToString("yyyy"), Data.ToString("MM"), Data.ToString("dd"));
 
 
 
-            var oneDrive = @"C:\Compass\OneDrive - MinhaTI\Compass\Trading";
+            var oneDrive = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading";
 
-            string direDrivePath = "C:\\Compass\\MinhaTI\\Alex Freires Marques - Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+            string direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
 
             if (Directory.Exists(oneDrive))
             {
-                direDrivePath = "C:\\Compass\\OneDrive - MinhaTI\\Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd");
+                direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd");
             }
 
             try
@@ -4176,13 +4176,13 @@ $"<p><pre></pre></p>" + $"</body></html>";
 
             string path = Path.Combine("C:\\Files\\Trading\\Acompanhamento Metereologico Semanal\\spiderman", Data.ToString("yyyy_MM_dd"), "CFS");
 
-            var oneDrive = @"C:\Compass\OneDrive - MinhaTI\Compass\Trading";
+            var oneDrive = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading";
 
-            string direDrivePath = "C:\\Compass\\MinhaTI\\Alex Freires Marques - Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd") + "\\CFS";
+            string direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd") + "\\CFS";
 
             if (Directory.Exists(oneDrive))
             {
-                direDrivePath = "C:\\Compass\\OneDrive - MinhaTI\\Compass\\Trading\\Acompanhamento Metereologico Semanal\\spiderman\\" + Data.ToString("yyyy_MM_dd") + "\\CFS";
+                direDrivePath = @"B:\Enercore\Energy Core Trading\Energy Core Pricing - Documents\Trading\Acompanhamento Metereologico Semanal\spiderman\" + Data.ToString("yyyy_MM_dd") + "\\CFS";
             }
 
             try
