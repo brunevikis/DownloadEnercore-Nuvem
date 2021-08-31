@@ -4761,7 +4761,14 @@ $"<p><pre></pre></p>" + $"</body></html>";
             byte[] content = null;
 
             //string fileCon = addressDownload.Split('/').Last();
+            DateTime dataArq = Data;
+            DateTime dataAtual = Data;
+            
 
+
+            string PathPsath = Path.Combine("C:\\Files\\Middle - Preço\\Acompanhamento de Precipitação\\Observado_Satelite", dataAtual.ToString("yyyy"), dataAtual.ToString("MM"));
+
+            string nomePsath = "psath_" + dataArq.ToString("ddMMyyyy") + ".zip";
 
 
             var pathCon = Path.Combine("C:\\Files\\Middle - Preço\\Acompanhamento de Precipitação\\Previsao_Numerica", Data.ToString("yyyyMM"));
@@ -4775,7 +4782,15 @@ $"<p><pre></pre></p>" + $"</body></html>";
             {
                 Directory.CreateDirectory(pathConMes);
             }
-
+            //colocar verificacao do psat aqui
+            if (File.Exists(Path.Combine(PathPsath,nomePsath)) && !File.Exists(Path.Combine(pathConMes,"PsatOk.txt")))
+            {
+                if (File.Exists(Path.Combine(pathConMes, filename)))
+                {
+                    File.Delete(Path.Combine(pathConMes, filename));
+                }
+                File.WriteAllText(Path.Combine(pathConMes, "PsatOk.txt"), "Psat existente");
+            }
             if (!File.Exists(Path.Combine(pathConMes, filename)))
             {
                 content = await DownloadData(addressDownload);
