@@ -379,25 +379,26 @@ namespace DownloadCompass
                             Directory.CreateDirectory(ipdoPath);
                         }
                         File.WriteAllBytes(full_Path, content);
-                        addHistory(Path.Combine(ipdoPath, "IPDO_History.txt"), "Download_Compass" + nameFile + DateTime.Now.ToString(" dd-MM-yyyy HH:mm:ss"));
 
                         try
                         {
+                            addHistory(Path.Combine(ipdoPath, "IPDO_History.txt"), "Download_Compass" + nameFile + DateTime.Now.ToString(" dd-MM-yyyy HH:mm:ss"));
+
                             IPDODB ipdoDb = new IPDODB();
                             ipdoDb.LoadProcess(full_Path);
                             //var tup = System.Diagnostics.Process.Start(@"C:\Sistemas\IPDO\Application Files\CurrentVersion\IPDO_Compass.exe", full_Path);
                             //tup.WaitForExit();
-
+                            await Tools.SendMail(
+                            Path.Combine(ipdoPath, nameFile), "IPDO baixado e salvo com sucesso! Via Download-Compass", nameFile + " [AUTO]", "preco");//TODO: preco
                         }
                         catch (Exception eer)
                         {
                             await Tools.SendMail(
-                           Path.Combine(ipdoPath, nameFile), "Erro ao carregar IPDO no Banco de Dados! Via Download-Compass", nameFile + " [AUTO]", "desenv");//TODO: preco
+                           Path.Combine(ipdoPath, nameFile), "Erro ao carregar IPDO no Banco de Dados! Via Download-Compass" + eer.Message, nameFile + " [AUTO]", "desenv");//TODO: preco
 
                         }
 
-                        await Tools.SendMail(
-                            Path.Combine(ipdoPath, nameFile), "IPDO baixado e salvo com sucesso! Via Download-Compass", nameFile + " [AUTO]", "preco");//TODO: preco
+                        
                     }
                 }
 
