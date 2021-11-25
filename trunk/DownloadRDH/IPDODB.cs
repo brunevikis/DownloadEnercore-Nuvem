@@ -145,7 +145,7 @@ namespace DownloadCompass
                 var totalRows = myWorksheet.Dimension.End.Row;
                 var totalColumns = myWorksheet.Dimension.End.Column;
 
-                for (int i = 471; i <= 576; i++)
+                for (int i = 469; i <= 576; i++)
                 {
                     try
                     {
@@ -190,7 +190,7 @@ namespace DownloadCompass
 
                 }
 
-                for (int i = 261; i <= 284; i++)
+                for (int i = 261; i <= 286; i++)
                 {
                     usina = myWorksheet.Cells["A" + i].Value.ToString();
                     if (usina != "")
@@ -401,10 +401,10 @@ namespace DownloadCompass
                 int termVeri_NE = Convert.ToInt32(myWorksheet.Cells["O28"].Value.ToString());
                 int termVeri_N = Convert.ToInt32(myWorksheet.Cells["O20"].Value.ToString());
 
-                double Dif_term_SE = Math.Round(Convert.ToDouble(myWorksheet.Cells["H633"].Value.ToString()), 0);
-                double Dif_term_S = Math.Round(Convert.ToDouble(myWorksheet.Cells["H634"].Value.ToString()), 0);
-                double Dif_term_NE = Math.Round(Convert.ToDouble(myWorksheet.Cells["H635"].Value.ToString()), 0);
-                double Dif_term_N = Math.Round(Convert.ToDouble(myWorksheet.Cells["H636"].Value.ToString()), 0);
+                double Dif_term_SE = Math.Round(Convert.ToDouble(myWorksheet.Cells["H631"].Value.ToString()), 0);
+                double Dif_term_S = Math.Round(Convert.ToDouble(myWorksheet.Cells["H632"].Value.ToString()), 0);
+                double Dif_term_NE = Math.Round(Convert.ToDouble(myWorksheet.Cells["H633"].Value.ToString()), 0);
+                double Dif_term_N = Math.Round(Convert.ToDouble(myWorksheet.Cells["H634"].Value.ToString()), 0);
 
                 double termProg_SE = termVeri_SE - Dif_term_SE;
                 double termProg_S = termVeri_S - Dif_term_S;
